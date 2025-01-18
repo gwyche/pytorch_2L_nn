@@ -47,10 +47,9 @@ while count < runs:
     u = torch.pow(t,2)
     delta_activation_tensor1 = 4/u
 
-    #calculate layer output error derivatives
+    #calculate output error derivatives
     delta_error_tensor2 = torch.subtract(activated_tensor2,target_tensor,alpha=1)
     flattened_L2_weight_tensor = torch.matmul(ones_line_tensor,weight_tensor2)
-
 
     #calculate layer 2 weight gradient tensor
     activation_and_error_deltas2 = torch.multiply(delta_error_tensor2,delta_activation_tensor2)
